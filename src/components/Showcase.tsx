@@ -62,6 +62,18 @@ const certificates = [
     thumbnail: "/assets/hackathon_cert.png",
     pdf: "/certificates/hackathon_certificate.pdf",
   },
+  {
+    title: "WEB DEVELOPMENT FOR BEGINNERS",
+    tech: "Simplilearn",
+    thumbnail: "/assets/web_dev_cert.png",
+    pdf: "/certificates/web_development_for_beginners.pdf",
+  },
+  {
+    title: "INTRODUCTION TO FRONTEND DEVELOPMENT",
+    tech: "Simplilearn",
+    thumbnail: "/assets/frontend_dev_cert.png",
+    pdf: "/certificates/introduction_to_frontend_development.pdf",
+  },
 ];
 
 const internships = [
