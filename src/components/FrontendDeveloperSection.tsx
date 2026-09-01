@@ -134,7 +134,7 @@ export default function FrontendDeveloperSection() {
     from-white via-white/60 to-white
     animate-[shine_4s_linear_infinite]"
         >
-          Possessing knowledge of Java and motivated to excel in fast-paced technology environments.
+          Skilled in Java, Spring Boot, React.js, MySQL, and REST APIs, with hands-on experience in full-stack development.
         </motion.p>
 
         <motion.div
@@ -143,7 +143,7 @@ export default function FrontendDeveloperSection() {
           transition={{ duration: 1, delay: 0.8 }}
           className="mt-6 flex flex-wrap gap-4"
         >
-          {["Next.js", "React.js", "SpringBoot", "Tailwind CSS"].map((tech) => (
+          {["Java", "Spring Boot", "React.js", "MySQL", "REST APIs"].map((tech) => (
             <div
               key={tech}
               className="

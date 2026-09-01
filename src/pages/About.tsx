@@ -58,55 +58,67 @@ export default function About() {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHAIK MOHAMMED FAYAZ - Resume</title>
     <style>
         @page {
             size: A4;
-            margin: 15mm;
+            margin: 12mm 15mm;
         }
         body {
             font-family: 'Times New Roman', Times, serif;
-            color: #000;
+            color: #111;
             line-height: 1.45;
             margin: 0;
-            padding: 24px;
+            padding: 20px;
             background: #fff;
         }
         .header {
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid #111;
+            padding-bottom: 10px;
         }
         .name {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: bold;
             letter-spacing: 2px;
             text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+        .subtitle {
+            font-size: 15px;
+            font-weight: 600;
             margin-bottom: 6px;
+            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
         }
         .contact {
             font-size: 11px;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
             color: #333;
         }
         .contact a {
             color: #0b57d0;
             text-decoration: none;
+            font-weight: 500;
         }
         .section-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #333;
-            margin-top: 16px;
+            letter-spacing: 1.2px;
+            border-bottom: 1.5px solid #222;
+            margin-top: 14px;
             margin-bottom: 8px;
-            padding-bottom: 2px;
-            font-family: Arial, sans-serif;
+            padding-bottom: 3px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
         }
         p {
             margin: 4px 0;
@@ -114,11 +126,11 @@ export default function About() {
         }
         ul {
             margin: 4px 0 8px 0;
-            padding-left: 18px;
+            padding-left: 20px;
             font-size: 12px;
         }
         li {
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
         .bold {
             font-weight: bold;
@@ -128,17 +140,12 @@ export default function About() {
             justify-content: space-between;
             align-items: baseline;
             font-size: 12px;
-            margin-bottom: 3px;
-        }
-        .cert-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
             margin-bottom: 4px;
         }
-        .cert-row a {
-            color: #0b57d0;
-            text-decoration: none;
+        .tech-used {
+            font-size: 11px;
+            font-style: italic;
+            color: #444;
         }
         @media print {
             body { padding: 0; }
@@ -148,76 +155,73 @@ export default function About() {
 <body>
     <div class="header">
         <div class="name">SHAIK MOHAMMED FAYAZ</div>
+        <div class="subtitle">Full Stack Developer</div>
         <div class="contact">
-            <a href="https://github.com/fayaz777-fz" target="_blank">GitHub</a> | 
-            <a href="https://www.linkedin.com/in/shaik-mohammed-fayaz-4448672b3/" target="_blank">LinkedIn</a> | 
-            <a href="https://leetcode.com/u/shaik_mohammed_fayaz/" target="_blank">LeetCode</a> | 
-            <a href="mailto:mfshaik03@gmail.com">mfshaik03@gmail.com</a> | 
-            <span>+91 9182622928</span>
+            <span>+91 9182622928</span> • 
+            <a href="mailto:mfshaik03@gmail.com">mfshaik03@gmail.com</a> • 
+            <a href="https://www.linkedin.com/in/shaik-mohammed-fayaz-4448672b3/" target="_blank">linkedin.com</a> • 
+            <a href="https://github.com/fayaz777-fz" target="_blank">github.com</a>
         </div>
     </div>
 
-    <div class="section-title">CAREER OBJECTIVE</div>
-    <p>Driven Computer Science Engineering student with strong proficiency in Data Structures Algorithms and Object-Oriented Programming. Possessing knowledge of Java and MySQL, and motivated to excel in fast-paced technology environments.</p>
+    <div class="section-title">Summary</div>
+    <p>Driven Computer Science Engineering student with strong proficiency in Data Structures & Algorithms and Object-Oriented Programming. Skilled in Java, Spring Boot, React.js, MySQL, and REST APIs, with hands-on experience in full-stack development.Ready to solve real-world problems, and contribute to innovative solutions.</p>
 
-    <div class="section-title">TECHNICAL SKILLS</div>
-    <ul>
-        <li><span class="bold">Programming Languages:</span> Java</li>
-        <li><span class="bold">Backend:</span> Node.js, Spring Boot</li>
-        <li><span class="bold">Frontend:</span> ReactJS, HTML, CSS</li>
-        <li><span class="bold">Databases:</span> MySQL, MongoDB</li>
-        <li><span class="bold">Concepts:</span> Data Structures & Algorithms, OOP, REST APIs</li>
-        <li><span class="bold">Tools:</span> Git, VS Code, Java Eclipse, Intellij</li>
-    </ul>
-
-    <div class="section-title">PROJECTS</div>
-    <p class="bold">VAHAAN BAZAAR (Website) – Full-Stack Web Application</p>
-    <ul>
-        <li>Developed using React.js, Node.js, and MongoDB.</li>
-        <li>Implemented backend APIs and database operations, Deployed on Vercel for reliable accessibility.</li>
-    </ul>
-
-    <p class="bold">KONDAVEEDU (App) – Historical Tourism Mobile Application</p>
-    <ul>
-        <li>Developed a tourism app promoting Kondaveedu Fort, Implemented using Flutter with structured and user-friendly interface.</li>
-        <li>Published on Google Play Store under college domain, Represented with Palnadu's District Collector</li>
-    </ul>
-
-    <p class="bold">PORTFOLIO (Website) – Personal Portfolio Site</p>
-    <ul>
-        <li>Designed and developed a responsive personal portfolio website showcasing skills, projects, education, certifications, and technical experience.</li>
-        <li>Implemented a responsive user interface with smooth animations for an engaging user experience.</li>
-    </ul>
-
-    <div class="section-title">EDUCATION</div>
+    <div class="section-title">Education</div>
     <div class="flex-between">
-        <span><span class="bold">2026</span> BTech (CSE) - Narasaraopeta Engineering College</span>
-        <span class="bold">(CGPA: 8.2)</span>
-    </div>
-    <div class="flex-between">
-        <span><span class="bold">2023</span> Class 12 – Sri Chaitanya Junior College</span>
-        <span class="bold">(8.6)</span>
-    </div>
-    <div class="flex-between">
-        <span><span class="bold">2021</span> Class 10 – St. Joseph's High School</span>
-        <span class="bold">(9.7)</span>
+        <span><span class="bold">B.Tech. Computer Science Engineering</span><br><i>Narasaraopeta Engineering College, Narasaraopeta</i></span>
+        <span style="text-align: right;"><span class="bold">Graduate: 2027</span><br>CGPA: 8.2 / 10</span>
     </div>
 
-    <div class="section-title">INTERNSHIP</div>
-    <p><span class="bold">DataValley Remote Java Full Stack Intern (May 2026 – Jul 2026)</span> – Successfully completed an Online Java Full Stack Development in collaboration with APSCHE</p>
+    <div class="section-title">Technical Skills</div>
     <ul>
-        <li>Gained hands-on experience in Core Java, JSP, Spring Boot, HTML, CSS and MySQL.</li>
+        <li><span class="bold">Programming :</span> Java, C</li>
+        <li><span class="bold">Frontend & Backend :</span> React.js, HTML, CSS, Spring, Spring Boot, Node.js</li>
+        <li><span class="bold">Database Querying :</span> MySQL, MongoDB</li>
+        <li><span class="bold">Concepts :</span> Data Structures & Algorithms, OOP, REST APIs, JPA</li>
+        <li><span class="bold">Tools :</span> Git, VS Code, Eclipse IDE, IntelliJ IDEA, Google Antigravity</li>
     </ul>
 
-    <div class="section-title">CERTIFICATIONS</div>
-    <div class="cert-row">
-        <span>Introduction to Internet of Things <span class="bold">(NPTEL)</span></span>
-        <a href="https://github.com/fayaz777-fz/My_Portfolio" target="_blank">View Certificate</a>
+    <div class="section-title">Experience</div>
+    <div class="flex-between">
+        <span><span class="bold">Java Full Stack Development Intern</span><br>Datavalley India Pvt. Ltd (Remote)</span>
+        <span style="text-align: right;"><span class="bold">May 2026 – July 2026</span><br><span class="tech-used">Technologies Used: Spring,Spring Boot, IntelliJ IDEA</span></span>
     </div>
-    <div class="cert-row">
-        <span>Generative AI by Google Cloud</span>
-        <a href="https://github.com/fayaz777-fz/My_Portfolio" target="_blank">View Certificate</a>
+    <ul>
+        <li>Completed an Online S-T Internship in Full Stack Development with Java, gaining hands-on experience in Core Java, JDBC, Servlets, JSP, Spring Boot, HTML, CSS and SQL.</li>
+        <li>Developed backend applications using Java and Spring Boot, following MVC architecture and building RESTful APIs.</li>
+        <li>Worked with MySQL for database operations, including CRUD functionality, database connectivity, and data management.</li>
+    </ul>
+
+    <div class="section-title">Projects</div>
+    <div class="flex-between">
+        <span><span class="bold">Vahaan Bazaar</span> | <i>Website</i></span>
+        <span class="bold">November 2025 -December 2025</span>
     </div>
+    <ul>
+        <li>Developed a full-stack online vehicle marketplace that enables users to buy and sell vehicles through a centralized digital platform.</li>
+        <li>Built features for vehicle listing, browsing, and management, providing a convenient alternative to traditional showroom-based vehicle transactions.</li>
+        <li>Implemented RESTful APIs and database operations to manage application data and core functionality.</li>
+        <li>Deployed the application on Vercel for accessible and reliable web hosting.</li>
+    </ul>
+
+    <div class="flex-between" style="margin-top: 8px;">
+        <span><span class="bold">My Personal Portfolio</span> | <i>Frontend</i></span>
+        <span class="bold">June 2025 – July 2025</span>
+    </div>
+    <ul>
+        <li>Designed a responsive personal portfolio website to showcase technical skills, projects, education, certifications, and professional experience, featuring direct links to GitHub repositories and live project demos</li>
+        <li>Built interactive UI components with modern design, smooth animations, and responsive layouts for an engaging user experience.</li>
+        <li>Integrated structured sections for projects, skills, experience, and certifications to present professional information effectively.</li>
+        <li>Gained hands-on experience with React.js, TypeScript, Tailwind CSS, HTML, and CSS while developing and deploying a responsive personal portfolio website.</li>
+    </ul>
+
+    <div class="section-title">Awards & Certifications</div>
+    <ul>
+        <li><span class="bold">Web Development – Simplilearn :</span> Completed foundational training in web development, gaining knowledge of web technologies and responsive web application development.</li>
+        <li><span class="bold">Generative AI by Google Cloud :</span> Earned 22 Skill Badges across Beginner, Advanced, and GAIL pathways, gaining knowledge of Generative AI and prompt engineering techniques.</li>
+        <li><span class="bold">Appreciation Certificate – College :</span> Recognized by the college for designing a tourism application (using AI Tools) to promote Kondaveedu, representing the college and showcasing the project to the Palnadu District Collector.</li>
+    </ul>
 
     <script>
         window.onload = function() {
@@ -377,7 +381,7 @@ export default function About() {
               </p>
 
               <p>
-                Driven Computer Science Engineering student with strong proficiency in Data Structures & Algorithms and Object-Oriented Programming (OOP). Possessing practical knowledge of Java and MySQL, I am seeking an entry-level role where I can contribute my technical skills toward company growth while building a successful career.
+                Driven Computer Science Engineering student with strong proficiency in Data Structures & Algorithms and Object-Oriented Programming. Skilled in Java, Spring Boot, React.js, MySQL, and REST APIs, with hands-on experience in full-stack development. Ready to solve real-world problems, and contribute to innovative solutions.
               </p>
 
               <p>
