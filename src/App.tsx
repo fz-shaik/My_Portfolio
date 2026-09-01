@@ -267,34 +267,51 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Social Icons — between taglines and PASSIONATE text */}
-              <div className="flex items-center gap-3 mt-6 pointer-events-auto">
+              {/* Social Links Stack — 3 lines stacked vertically with labels */}
+              <div className="flex flex-col gap-2.5 mt-5 pointer-events-auto">
                 <a
                   href="https://github.com/fayaz777-fz"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/15 text-white/80 hover:text-white hover:bg-white/15 hover:scale-110 transition-all duration-300"
+                  className="inline-flex items-center gap-3 text-xs sm:text-sm font-mono tracking-wider text-white/80 hover:text-white group transition-all duration-300 w-fit"
                 >
-                  <FaGithub size={18} />
+                  <span className="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/15 group-hover:bg-white/15 group-hover:border-white/30 group-hover:scale-105 transition-all duration-300">
+                    <FaGithub size={18} />
+                  </span>
+                  <span className="font-semibold text-white/90 group-hover:text-white group-hover:translate-x-0.5 transition-all duration-300">
+                    GitHub
+                  </span>
                 </a>
+
                 <a
                   href="https://linkedin.com/in/shaik-mohammed-fayaz-4448672b3/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-[#0A66C2]/10 border border-[#0A66C2]/30 text-[#0A66C2] hover:bg-[#0A66C2]/20 hover:scale-110 transition-all duration-300"
+                  className="inline-flex items-center gap-3 text-xs sm:text-sm font-mono tracking-wider text-[#0A66C2]/90 hover:text-[#0A66C2] group transition-all duration-300 w-fit"
                 >
-                  <FaLinkedin size={18} />
+                  <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0A66C2]/10 border border-[#0A66C2]/30 group-hover:bg-[#0A66C2]/20 group-hover:border-[#0A66C2]/50 group-hover:scale-105 transition-all duration-300">
+                    <FaLinkedin size={18} />
+                  </span>
+                  <span className="font-semibold text-[#0A66C2] group-hover:translate-x-0.5 transition-all duration-300">
+                    LinkedIn
+                  </span>
                 </a>
+
                 <a
                   href="https://leetcode.com/u/shaik_mohammed_fayaz/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LeetCode"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-[#FFA116]/10 border border-[#FFA116]/30 text-[#FFA116] hover:bg-[#FFA116]/20 hover:scale-110 transition-all duration-300"
+                  className="inline-flex items-center gap-3 text-xs sm:text-sm font-mono tracking-wider text-[#FFA116]/90 hover:text-[#FFA116] group transition-all duration-300 w-fit"
                 >
-                  <SiLeetcode size={16} />
+                  <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#FFA116]/10 border border-[#FFA116]/30 group-hover:bg-[#FFA116]/20 group-hover:border-[#FFA116]/50 group-hover:scale-105 transition-all duration-300">
+                    <SiLeetcode size={16} />
+                  </span>
+                  <span className="font-semibold text-[#FFA116] group-hover:translate-x-0.5 transition-all duration-300">
+                    LeetCode
+                  </span>
                 </a>
               </div>
 

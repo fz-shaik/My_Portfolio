@@ -33,7 +33,7 @@ export default function AnimatedComputerSetup() {
 
   return (
     <div className="relative w-full h-full min-h-[520px] md:min-h-[620px] flex flex-col items-center justify-center p-2 sm:p-4 select-none overflow-hidden font-sans text-slate-100">
-      
+
       {/* BREATHING AMBIENT BACKGROUND GLOW (6s cycle) */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
         <div className="w-[500px] sm:w-[600px] h-[500px] sm:h-[600px] bg-gradient-to-tr from-sky-900/30 via-indigo-950/40 to-cyan-900/20 rounded-full blur-[120px] animate-breathe-glow" />
@@ -59,22 +59,22 @@ export default function AnimatedComputerSetup() {
 
       {/* MAIN WORKSTATION SCENE WITH GENTLE FLOATING (6s cycle) */}
       <div className="relative z-10 w-full max-w-[760px] flex flex-col items-center animate-gentle-float">
-        
+
         {/* TOP WORKSTATION AREA: MONITOR + CPU TOWER */}
         <div className="w-full flex flex-col md:flex-row items-center md:items-end justify-center gap-6 md:gap-8 relative">
-          
+
           {/* ================= MONITOR ASSEMBLY ================= */}
           <div className="relative flex flex-col items-center w-full max-w-[480px]">
-            
+
             {/* BREATHING MONITOR BACKLIGHT GLOW */}
             <div className="absolute -inset-4 bg-sky-500/15 rounded-3xl blur-2xl animate-breathe-glow pointer-events-none" />
 
             {/* DUAL-BEZEL MONITOR FRAME */}
             <div className="relative w-full h-72 sm:h-80 bg-gradient-to-b from-slate-800 to-slate-900 border-2 border-slate-700/80 rounded-2xl p-2 sm:p-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex flex-col group backdrop-blur-md">
-              
+
               {/* INNER DISPLAY BEZEL & SCREEN */}
               <div className="relative flex-1 bg-slate-950 rounded-xl border border-sky-500/30 overflow-hidden flex flex-col justify-between shadow-inner">
-                
+
                 {/* GLASS REFLECTION LIGHT SWEEP */}
                 <div className="absolute inset-0 pointer-events-none z-30 overflow-hidden">
                   <div className="w-[150%] h-[200%] bg-gradient-to-r from-transparent via-white/8 to-transparent transform -rotate-45 animate-glass-sweep" />
@@ -97,13 +97,13 @@ export default function AnimatedComputerSetup() {
 
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[9px] font-mono text-emerald-300 font-semibold hidden sm:inline">EXECUTING</span>
+                    <span className="text-[9px] font-mono text-emerald-300 font-semibold hidden sm:inline">RUNNING</span>
                   </div>
                 </div>
 
                 {/* SCREEN CONTENT: APP.JAVA CONTINUOUS SCROLLING UP ANIMATION */}
                 <div className="relative z-10 flex-1 p-3 overflow-hidden font-mono text-[10px] sm:text-xs leading-relaxed text-slate-300 flex flex-col justify-between">
-                  
+
                   {/* FADE MASKS FOR SMOOTH ENTRY AND EXIT */}
                   <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-b from-slate-950 to-transparent z-20 pointer-events-none" />
                   <div className="absolute bottom-6 left-0 right-0 h-4 bg-gradient-to-t from-slate-950 to-transparent z-20 pointer-events-none" />
@@ -119,17 +119,17 @@ export default function AnimatedComputerSetup() {
                       ))}
                     </div>
                   </div>
-                  
+
                   {/* BOTTOM STATUS BAR */}
                   <div className="pt-1.5 border-t border-slate-800/80 flex items-center justify-between text-[9px] text-slate-400 relative z-20 bg-slate-950/90 shrink-0">
                     <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> UTF-8 · Java 21</span>
-                    <span className="text-sky-400 font-semibold">App.java · Continuous Execution</span>
+                    <span className="text-sky-400 font-semibold">App.java · code Execution</span>
                   </div>
                 </div>
 
                 {/* BOTTOM BEZEL BRAND LABEL */}
                 <div className="h-4 bg-slate-900 border-t border-slate-800 flex items-center justify-center">
-                  <span className="text-[8px] font-mono tracking-[0.25em] text-slate-500 uppercase font-semibold">FAYAZ · DEV-RIG</span>
+                  <span className="text-[8px] font-mono tracking-[0.25em] text-slate-500 uppercase font-semibold">Asus ExpertBook</span>
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function AnimatedComputerSetup() {
 
           {/* ================= CPU TOWER ASSEMBLY ================= */}
           <div className="relative w-36 sm:w-44 h-72 sm:h-80 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 border border-slate-700/80 rounded-xl p-3 shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex flex-col justify-between overflow-hidden shrink-0">
-            
+
             {/* BRUSHED METAL TEXTURE OVERLAY */}
             <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:8px_8px] pointer-events-none" />
 
@@ -157,7 +157,7 @@ export default function AnimatedComputerSetup() {
             {/* 6-BLADE SPINNING COOLING FAN ASSEMBLY */}
             <div className="relative z-10 my-auto flex flex-col items-center justify-center">
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-slate-950 border-2 border-sky-500/40 p-1 flex items-center justify-center shadow-[0_0_20px_rgba(56,189,248,0.25)]">
-                
+
                 {/* AMBIENT FAN RING GLOW */}
                 <div className="absolute inset-0 rounded-full bg-sky-500/10 blur-sm" />
 
@@ -181,7 +181,7 @@ export default function AnimatedComputerSetup() {
 
             {/* FRONT PANEL: LEDs & BRAND PLATE */}
             <div className="relative z-10 w-full flex flex-col gap-2 pt-2 border-t border-slate-800">
-              
+
               {/* LABELED LEDs (PWR & ACT) */}
               <div className="flex items-center justify-around px-2">
                 <div className="flex items-center gap-1.5">
@@ -197,7 +197,7 @@ export default function AnimatedComputerSetup() {
               {/* "DEV-RIG" BRAND PLATE */}
               <div className="w-full py-1 bg-slate-950 rounded-md border border-slate-800 flex items-center justify-center shadow-inner">
                 <span className="text-[9px] font-mono font-extrabold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-300 uppercase">
-                  DEV-RIG
+                  CPU
                 </span>
               </div>
             </div>
@@ -223,26 +223,26 @@ export default function AnimatedComputerSetup() {
 
         {/* ================= DESK SURFACE AREA: KEYBOARD & MOUSE ================= */}
         <div className="w-full flex items-end justify-center gap-4 sm:gap-8 pt-1 relative">
-          
+
           {/* UNDERLIGHT GLOW BENEATH KEYBOARD */}
           <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[75%] h-6 bg-sky-500/25 blur-lg rounded-full pointer-events-none" />
 
           {/* KEYBOARD (FULL 6-ROW KEYBOARD WITH STAGGERED RIPPLE LIGHTING) */}
           <div className="relative bg-slate-900/95 border border-slate-700/80 rounded-xl p-1.5 sm:p-2 shadow-[0_10px_25px_rgba(0,0,0,0.7)] flex flex-col gap-1 backdrop-blur-md">
-            
+
             {/* ROW 1: FUNCTION ROW */}
             <div className="flex gap-0.5 sm:gap-1 justify-center items-center">
               <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-[3px] bg-slate-950 border border-slate-700/80 text-[7px] font-mono text-sky-400 flex items-center justify-center shadow">Esc</div>
               <div className="w-1" />
-              {["F1","F2","F3","F4"].map((key, i) => (
+              {["F1", "F2", "F3", "F4"].map((key, i) => (
                 <div key={i} className="w-4 sm:w-5 h-4 sm:h-5 rounded-[3px] bg-slate-800/90 border border-slate-700/70 text-[7px] font-mono text-slate-400 flex items-center justify-center shadow animate-key-ripple" style={{ animationDelay: `${i * 90}ms` }}>{key}</div>
               ))}
               <div className="w-1" />
-              {["F5","F6","F7","F8"].map((key, i) => (
+              {["F5", "F6", "F7", "F8"].map((key, i) => (
                 <div key={i} className="w-4 sm:w-5 h-4 sm:h-5 rounded-[3px] bg-slate-800/90 border border-slate-700/70 text-[7px] font-mono text-slate-400 flex items-center justify-center shadow animate-key-ripple" style={{ animationDelay: `${(i + 4) * 90}ms` }}>{key}</div>
               ))}
               <div className="w-1" />
-              {["F9","F10","F11","F12"].map((key, i) => (
+              {["F9", "F10", "F11", "F12"].map((key, i) => (
                 <div key={i} className="w-4 sm:w-5 h-4 sm:h-5 rounded-[3px] bg-slate-800/90 border border-slate-700/70 text-[7px] font-mono text-slate-400 flex items-center justify-center shadow animate-key-ripple" style={{ animationDelay: `${(i + 8) * 90}ms` }}>{key}</div>
               ))}
               <div className="w-1" />
@@ -303,7 +303,7 @@ export default function AnimatedComputerSetup() {
 
           {/* REALISTIC SLIM MOUSE WITH SPLIT-LINE & BLUE SCROLL WHEEL */}
           <div className="relative w-10 sm:w-12 h-16 sm:h-18 rounded-t-full rounded-b-2xl bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 border border-slate-700/80 shadow-[0_4px_20px_rgba(56,189,248,0.35)] flex flex-col items-center pt-2 overflow-hidden shrink-0">
-            
+
             {/* SPLIT LINE GAP */}
             <div className="w-full flex justify-between px-2">
               <div className="w-[45%] h-5 border-b border-slate-700/60" />

@@ -583,6 +583,22 @@ export default function ShowcaseSection() {
   return (
     <section className="relative w-full min-h-[85vh] md:min-h-screen bg-black overflow-hidden text-white px-4 sm:px-8 md:px-16 lg:px-24 py-0 md:py-12 -mt-16 sm:mt-0 md:mt-12">
       <div className="relative z-10 flex flex-col items-center max-w-6xl mx-auto">
+        {/* Skills & Tech Stack Section (Skills & Knowledge + STACK TECHNOLOGY) */}
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16 md:mb-24">
+          {/* Left Side: Skills & Knowledge */}
+          <div className="lg:col-span-8 w-full lg:-ml-6">
+            <SkillsAndKnowledgeSection />
+          </div>
+
+          {/* Right Side: Tech Stack 3D Globe */}
+          <div className="lg:col-span-4 w-full flex justify-center lg:justify-end">
+            <div className="relative scale-90 sm:scale-95 md:scale-100 origin-center lg:origin-right">
+              <TechGrid />
+            </div>
+          </div>
+        </div>
+
+        {/* Certification Showcase Section */}
         {/* Label */}
         <div className="relative flex items-center justify-center gap-4 mb-5 opacity-0 animate-[fadeSlideDown_0.8s_ease_forwards]">
           <div className="relative overflow-hidden">
@@ -705,21 +721,6 @@ export default function ShowcaseSection() {
             </div>
           )}
 
-        </div>
-
-        {/* Skills & Tech Stack Section */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-12 md:mt-20">
-          {/* Left Side: Skills & Knowledge */}
-          <div className="lg:col-span-8 w-full lg:-ml-6">
-            <SkillsAndKnowledgeSection />
-          </div>
-
-          {/* Right Side: Tech Stack 3D Globe */}
-          <div className="lg:col-span-4 w-full flex justify-center lg:justify-end">
-            <div className="relative scale-90 sm:scale-95 md:scale-100 origin-center lg:origin-right">
-              <TechGrid />
-            </div>
-          </div>
         </div>
 
         {/* ─── TOOLS USED — Scrolling Marquee ─────────────────────────── */}
