@@ -32,11 +32,11 @@ export default function AnimatedComputerSetup() {
   const infiniteCode = [...javaCodeLines, ...javaCodeLines];
 
   return (
-    <div className="relative w-full h-full min-h-[520px] md:min-h-[620px] flex flex-col items-center justify-center p-2 sm:p-4 select-none overflow-hidden font-sans text-slate-100">
+    <div className="relative w-full h-full min-h-[340px] md:min-h-[420px] flex flex-col items-center justify-center p-1 sm:p-3 select-none overflow-hidden font-sans text-slate-100">
 
       {/* BREATHING AMBIENT BACKGROUND GLOW (6s cycle) */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <div className="w-[500px] sm:w-[600px] h-[500px] sm:h-[600px] bg-gradient-to-tr from-sky-900/30 via-indigo-950/40 to-cyan-900/20 rounded-full blur-[120px] animate-breathe-glow" />
+        <div className="w-[320px] sm:w-[400px] h-[320px] sm:h-[400px] bg-gradient-to-tr from-sky-900/30 via-indigo-950/40 to-cyan-900/20 rounded-full blur-[80px] animate-breathe-glow" />
       </div>
 
       {/* DRIFTING PARTICLES */}
@@ -46,8 +46,8 @@ export default function AnimatedComputerSetup() {
             key={i}
             className="absolute rounded-full bg-sky-400/40 animate-particle-drift"
             style={{
-              width: `${(i % 3) + 2.5}px`,
-              height: `${(i % 3) + 2.5}px`,
+              width: `${(i % 3) + 2}px`,
+              height: `${(i % 3) + 2}px`,
               left: `${(i * 8.5 + 4) % 94}%`,
               bottom: "-15px",
               animationDuration: `${6 + (i % 5) * 1.8}s`,
@@ -58,19 +58,19 @@ export default function AnimatedComputerSetup() {
       </div>
 
       {/* MAIN WORKSTATION SCENE WITH GENTLE FLOATING (6s cycle) */}
-      <div className="relative z-10 w-full max-w-[760px] flex flex-col items-center animate-gentle-float">
+      <div className="relative z-10 w-full max-w-[580px] scale-[0.62] sm:scale-75 md:scale-[0.78] lg:scale-80 flex flex-col items-center animate-gentle-float origin-center transition-all duration-300">
 
         {/* TOP WORKSTATION AREA: MONITOR + CPU TOWER */}
-        <div className="w-full flex flex-col md:flex-row items-center md:items-end justify-center gap-6 md:gap-8 relative">
+        <div className="w-full flex flex-col md:flex-row items-center md:items-end justify-center gap-5 md:gap-6 relative">
 
           {/* ================= MONITOR ASSEMBLY ================= */}
-          <div className="relative flex flex-col items-center w-full max-w-[480px]">
+          <div className="relative flex flex-col items-center w-full max-w-[420px]">
 
             {/* BREATHING MONITOR BACKLIGHT GLOW */}
             <div className="absolute -inset-4 bg-sky-500/15 rounded-3xl blur-2xl animate-breathe-glow pointer-events-none" />
 
             {/* DUAL-BEZEL MONITOR FRAME */}
-            <div className="relative w-full h-72 sm:h-80 bg-gradient-to-b from-slate-800 to-slate-900 border-2 border-slate-700/80 rounded-2xl p-2 sm:p-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex flex-col group backdrop-blur-md">
+            <div className="relative w-full h-64 sm:h-72 bg-gradient-to-b from-slate-800 to-slate-900 border-2 border-slate-700/80 rounded-2xl p-2 sm:p-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex flex-col group backdrop-blur-md">
 
               {/* INNER DISPLAY BEZEL & SCREEN */}
               <div className="relative flex-1 bg-slate-950 rounded-xl border border-sky-500/30 overflow-hidden flex flex-col justify-between shadow-inner">
@@ -142,7 +142,7 @@ export default function AnimatedComputerSetup() {
           </div>
 
           {/* ================= CPU TOWER ASSEMBLY ================= */}
-          <div className="relative w-36 sm:w-44 h-72 sm:h-80 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 border border-slate-700/80 rounded-xl p-3 shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex flex-col justify-between overflow-hidden shrink-0">
+          <div className="relative w-32 sm:w-40 h-64 sm:h-72 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 border border-slate-700/80 rounded-xl p-2.5 sm:p-3 shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex flex-col justify-between overflow-hidden shrink-0">
 
             {/* BRUSHED METAL TEXTURE OVERLAY */}
             <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:8px_8px] pointer-events-none" />
