@@ -66,8 +66,8 @@ export default function BandCard() {
 
   return (
     <div
-      className="absolute inset-0 w-full h-full"
-      style={{ pointerEvents: "none" }}
+      className="absolute inset-0 w-full h-full pointer-events-auto"
+      style={{ pointerEvents: "auto" }}
     >
       <Suspense fallback={null}>
         <Canvas
@@ -253,6 +253,22 @@ function Band({
   }, [hovered, dragged]);
 
   useFrame((state, delta) => {
+    // Normal subtle natural hanging idle motion instead of high-amplitude pendulum swing
+    if (dragged === null && card.current) {
+      const t = state.clock.getElapsedTime();
+      // Subtle organic sway & tilt for normal realistic card holder motion
+      const normalSwayZ = Math.sin(t * 1.0) * 0.1;
+      const normalSwayX = Math.cos(t * 0.8) * 0.03;
+
+      [card, j1, j2, j3, fixed].forEach((r) => r.current?.wakeUp());
+
+      card.current.setAngvel({
+        x: normalSwayX,
+        y: -card.current.rotation().y * 0.25,
+        z: normalSwayZ,
+      });
+    }
+
     if (
       dragged !== null &&
       card.current &&
@@ -375,11 +391,13 @@ function Band({
 
       rot.copy(card.current.rotation());
 
-      card.current.setAngvel({
-        x: ang.x,
-        y: ang.y - rot.y * 0.25,
-        z: ang.z,
-      });
+      if (dragged !== null) {
+        card.current.setAngvel({
+          x: ang.x,
+          y: ang.y - rot.y * 0.25,
+          z: ang.z,
+        });
+      }
     }
   });
 
@@ -390,8 +408,8 @@ function Band({
       <group
         position={
           isMobile
-            ? [1.2, 3, 0]
-            : [3, 4, 0]
+            ? [0, 3.2, 0]
+            : [0, 4, 0]
         }
       >
         <RigidBody

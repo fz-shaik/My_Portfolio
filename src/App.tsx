@@ -1,18 +1,18 @@
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-
-import heroEye from "@/assets/hero-eye.png";
 
 import WelcomeScreen from "@/components/WelcomeScreen";
 import FrontendDeveloperSection from "@/components/FrontendDeveloperSection";
 import Showcase from "./components/Showcase";
 import ContactSection from "@/components/ContactSection";
+import AnimatedComputerSetup from "./components/AnimatedComputerSetup";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 
+const BandCard = lazy(() => import("@/components/BandCard"));
 
 const logos = ["FAYAZ", "| SOFTWARE ", "ENGINEER |", "FULLSTACK", "DEVELOPER"];
 
@@ -21,7 +21,7 @@ export default function App() {
   const [time, setTime] = useState("");
   const [mobileMenu, setMobileMenu] = useState(false);
 
-  const text = "FAYAZ";
+  const text = "Shaik Mohammed Fayaz";
   const [displayed, setDisplayed] = useState("");
 
 
@@ -64,7 +64,7 @@ export default function App() {
     function type() {
       setDisplayed(text.slice(0, i + 1));
       i++;
-      if (i < text.length) setTimeout(type, 200);
+      if (i < text.length) setTimeout(type, 110);
     }
     type();
   }, []);
@@ -78,7 +78,7 @@ export default function App() {
           <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 backdrop-blur-xl bg-black/20 border-b border-white/10">
             <div className="flex items-center gap-3">
               <span className="text-[10px] md:text-xs tracking-[0.3em] text-white/70 uppercase font-medium">
-                FAYAZ · SOFTWARE ENGINEER
+                SHAIK MOHAMMED FAYAZ · SOFTWARE ENGINEER
               </span>
             </div>
             <ul className="hidden md:flex items-center gap-10 text-xs tracking-widest text-white/70 uppercase">
@@ -241,26 +241,21 @@ export default function App() {
             id="Home"
             className="relative w-full h-screen min-h-[640px] overflow-hidden bg-black"
           >
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[85%] md:w-[48%] h-[80%] max-h-[680px] pointer-events-none flex items-center justify-end pr-4 md:pr-12">
-              <div className="relative w-full h-full rounded-l-[120px] md:rounded-l-[200px] overflow-hidden border-l-2 border-y border-white/20 bg-gradient-to-b from-white/10 via-black/40 to-black shadow-2xl shadow-white/5 backdrop-blur-sm">
-                <img
-                  src={heroEye}
-                  alt="Hero"
-                  className="w-full h-full object-cover object-top filter contrast-[1.05] brightness-95"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent opacity-60" />
-              </div>
+            {/* ANIMATED COMPUTER SETUP CONTAINER */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full md:w-[50%] lg:w-[48%] h-[85%] max-h-[680px] z-20 pointer-events-auto flex items-center justify-center pr-2 md:pr-10">
+              <AnimatedComputerSetup />
             </div>
 
-            <div className="relative z-10 w-full h-full flex flex-col justify-between px-6 md:px-12 pt-24 pb-10">
+            {/* TEXT OVERLAY */}
+            <div className="relative z-10 w-full h-full flex flex-col justify-between px-6 md:px-12 pt-24 pb-10 pointer-events-none">
               <h1
-                className="font-display uppercase leading-[0.85] tracking-[-0.03em] text-[22vw] md:text-[14vw] lg:text-[13rem] text-white transition-all duration-300"
+                className="font-sans font-extrabold tracking-tight leading-none text-white text-[clamp(20px,3.8vw,52px)] whitespace-nowrap overflow-hidden transition-all duration-300 pointer-events-none select-none"
               >
                 {displayed || "\u00A0"}
+                <span className="animate-pulse text-sky-400 font-mono ml-1">|</span>
               </h1>
 
-              <div className="mt-8 md:mt-12 space-y-2">
+              <div className="mt-8 md:mt-12 space-y-2 pointer-events-auto max-w-xl">
                 <p className="text-left text-lg sm:text-xl md:text-2xl lg:text-3xl leading-snug font-[Poppins] font-semibold tracking-wide text-transparent bg-clip-text bg-[length:200%_auto] bg-gradient-to-r from-white via-white/70 to-white animate-[shine_4s_linear_infinite]">
                   Building Scalable Software Systems.
                 </p>
@@ -273,7 +268,7 @@ export default function App() {
               </div>
 
               {/* Social Icons — between taglines and PASSIONATE text */}
-              <div className="flex items-center gap-3 mt-6">
+              <div className="flex items-center gap-3 mt-6 pointer-events-auto">
                 <a
                   href="https://github.com/fayaz777-fz"
                   target="_blank"
@@ -303,8 +298,8 @@ export default function App() {
                 </a>
               </div>
 
-              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mt-auto">
-                <p className="relative text-sm sm:text-base lg:text-2xl leading-relaxed max-w-md font-[cursive] italic font-semibold tracking-wider text-white">
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mt-auto pointer-events-none">
+                <p className="relative text-sm sm:text-base lg:text-2xl leading-relaxed max-w-md font-[cursive] italic font-semibold tracking-wider text-white pointer-events-auto">
                   PASSIONATE COMPUTER SCIENCE ENGINEERING STUDENT
                 </p>
 

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FileText } from "lucide-react";
 import ResumeModal from "./ResumeModal";
 
@@ -10,20 +10,11 @@ export default function FrontendDeveloperSection() {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { amount: 0.4 });
 
-  const [showCard, setShowCard] = useState(false);
+  const [showSetup, setShowSetup] = useState(true);
   const [showResume, setShowResume] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [goAbout, setGoAbout] = useState(false);
 
   const navigate = useNavigate();
-
-  useEffect(() => setMounted(true), []);
-
-  useEffect(() => {
-    if (inView) {
-      setShowCard(true);
-    }
-  }, [inView]);
 
   // page exit → navigate after animation
   useEffect(() => {
@@ -66,7 +57,7 @@ export default function FrontendDeveloperSection() {
         duration: 1.8,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="relative w-full min-h-screen bg-black text-white overflow-hidden flex items-start px-6 md:px-20 pt-16 md:pt-28 select-none"
+      className="relative w-full min-h-screen bg-black text-white overflow-hidden flex flex-col lg:flex-row items-center justify-between px-6 md:px-16 pt-16 md:pt-28 pb-12 select-none"
     >
       {/* TEXT */}
       <div className="relative z-10 max-w-2xl">
@@ -173,10 +164,10 @@ export default function FrontendDeveloperSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.9 }}
-            onClick={() => setShowCard((s) => !s)}
+            onClick={() => setShowSetup((s) => !s)}
             className="inline-flex items-center gap-2 border border-accent text-accent px-6 py-3 text-xs tracking-[0.25em] uppercase font-semibold hover:bg-accent hover:text-black transition-all duration-200 rounded-full relative z-20"
           >
-            {showCard ? "Hide Card" : "Show Card"}
+            {showSetup ? "Hide Card" : "Show Card"}
           </motion.button>
 
           {/* About Button */}
@@ -204,16 +195,20 @@ export default function FrontendDeveloperSection() {
         </div>
       </div>
 
-      {/* 3D ID CARD */}
+      {/* 3D ID CARD HOLDER SECTION */}
       <AnimatePresence>
-        {showCard && mounted && (
+        {showSetup && (
           <motion.div
-            initial={{ y: "-100%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: "-100%", opacity: 0 }}
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 z-[5] pointer-events-none"
+            initial={{ opacity: 0, y: -60, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 60, scale: 0.95 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[48%] h-[480px] md:h-[580px] mt-10 lg:mt-0 flex items-center justify-center relative z-10 pointer-events-auto"
           >
+            <div className="absolute top-4 right-4 z-30 pointer-events-none flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-[10px] sm:text-[11px] font-mono tracking-widest text-sky-300 uppercase shadow-[0_0_20px_rgba(56,189,248,0.3)] animate-pulse">
+              <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
+              <span>✦ Drag ID Card</span>
+            </div>
             <Suspense fallback={null}>
               <BandCard />
             </Suspense>
