@@ -35,10 +35,9 @@ extend({
   MeshLineGeometry,
   MeshLineMaterial,
 });
-
-const GLTF_PATH = "/assets/cards.glb";
-const TEXTURE_PATH = "/assets/new.jpeg";
-const CARD_TEXTURE_PATH = "/assets/card_fayaz.png";
+const GLTF_PATH = import.meta.env.BASE_URL + "assets/cards.glb";
+const TEXTURE_PATH = import.meta.env.BASE_URL + "assets/new.jpeg";
+const CARD_TEXTURE_PATH = import.meta.env.BASE_URL + "assets/card_fayaz.png";
 
 useGLTF.preload(GLTF_PATH);
 useTexture.preload(TEXTURE_PATH);

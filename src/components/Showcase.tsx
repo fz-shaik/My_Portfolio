@@ -23,7 +23,7 @@ const techStack = [
 const projects = [
   {
     tech: "web development-VAHAAN BAZAAR",
-    thumbnail: "/assets/vahaan_bazaar.jpg",
+    thumbnail: import.meta.env.BASE_URL + "assets/vahaan_bazaar.jpg",
     github: "https://github.com/fayaz777-fz/Vahaan_Bazaar",
   },
   {

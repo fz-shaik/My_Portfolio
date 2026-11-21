@@ -4,13 +4,18 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 
 export default defineConfig({
-  base: "/My_Portfolio/",
+  base: process.env.GITHUB_ACTIONS === "true"
+    ? "/My_Portfolio/"
+    : "/",
+
   plugins: [react(), tailwindcss()],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
   },
+
   server: {
     host: "::",
     port: 8080,
