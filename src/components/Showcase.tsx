@@ -28,17 +28,17 @@ const projects = [
   },
   {
     tech: "APP DEVELOPMENT -TOURIST APP",
-    thumbnail: "/assets/tourist_app.png",
+    thumbnail: import.meta.env.BASE_URL + "assets/tourist_app.png",
     github: "https://github.com/fayaz777-fz/Tourist-App",
   },
   {
     tech: "AI Web Studio-code generator",
-    thumbnail: "/assets/website.png",
+   thumbnail: import.meta.env.BASE_URL + "assets/website.png",
     github: "https://github.com/fayaz777-fz/Ai-webpage-designer",
   },
   {
     tech: "PERSONAL PORTFOLIO WEBSITE",
-    thumbnail: "/assets/portfolio_preview.png",
+   thumbnail: import.meta.env.BASE_URL + "assets/portfolio_preview.png",
     github: "https://github.com/fayaz777-fz/My_Portfolio",
   },
 ];
